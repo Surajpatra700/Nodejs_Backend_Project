@@ -1,3 +1,5 @@
+
+require('dotenv').config();
 const app = require('express')();
 const http = require('http').Server(app);
 
@@ -6,7 +8,7 @@ const mongoose = require('mongoose');
 // password: NzOpwAEtcMNaJpzS
 // username: surajpatra
 
-mongoose.connect("mongodb+srv://surajpatra:NzOpwAEtcMNaJpzS@cluster0.llfeams.mongodb.net/suraj?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGO_URL);
 
 const User = require('./userModel');
 
