@@ -6,14 +6,14 @@
   "scripts": {
     "start": "node flutter_node/public/app.js",
     "dev": "nodemon flutter_node/src/app.ts",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "test": "nodemon mongo_js_testing/server.js"
   },
   "author": "Suraj",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mongodb": "^5.7.0",
     "mongoose": "^7.4.1"
   },
   "devDependencies": {

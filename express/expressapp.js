@@ -9,20 +9,7 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
     const data = fs.readFileSync('index.html');
-    res.send(data.toString())
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    res.send(data.toString())    
 })
 
 app.listen(port, () => {
