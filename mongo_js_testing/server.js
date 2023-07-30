@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const {Server} = require('ws');
+
 //const api = require('./api');
 const userRouter = require('./router');
 const personRouter = require("./router2");
@@ -16,9 +18,17 @@ app.use('/db',userRouter);
 app.use('/user',personRouter);
 require('./conn');
 
-app.listen(port, function () {
+const server = app.listen(port, function () {
 	console.log("Server is listening at port:" + port);
 });
+
+const wss = new Server({server});
+
+wss.on('connection', ws =>{
+	console.log('Client Connected');
+	ws.on('message', message => console.log('Recieved: '+ message));
+	ws.on('close',()=> console.log('Client disconnected'));
+})
 
 // Parses the text as url encoded data
 
