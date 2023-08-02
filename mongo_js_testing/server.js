@@ -9,19 +9,23 @@ const bodyParser = require('body-parser');
 const userRouter = require('./router');
 const personRouter = require("./router2");
 
-const port = 4500;
+const port = process.env.PORT || 4500;
 const app = express();
 // app.use(cors);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/db',userRouter);
-app.use('/user',personRouter);
+app.use('/db', userRouter);
+app.use('/user', personRouter);
 require('./conn');
 
 app.listen(port, function () {
 	console.log("Server is listening at port:" + port);
 });
+
+app.get('/', (req, res) => {
+	res.send('Reached Home');
+})
 
 // const wss = new Server({server});
 
