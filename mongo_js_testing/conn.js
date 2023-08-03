@@ -4,3 +4,4 @@ const mongoose = require('mongoose');
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(()=>console.log("connected to db")).catch((err)=>console.log("Error!" + err));
+    

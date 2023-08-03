@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
 	res.send('Reached Home');
 })
 
+// app.post('/', (req, res)=>{
+// 	res.send("Server Post Request");
+// })
+
 // const wss = new Server({server});
 
 // wss.on('connection', ws =>{
