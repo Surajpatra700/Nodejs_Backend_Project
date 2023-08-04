@@ -4,3 +4,4 @@ const {signup, signin} = require("../controllers/usercontrollers");
 
 userRouter.post("/signup",signup);
 userRouter.post("/signin", signin);
+module.exports = userRouter;
